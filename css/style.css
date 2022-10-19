@@ -11,8 +11,8 @@
   --spacer-10: 10px;
   --spacer-30: 30px;
   --font-size-20: 20px;
-  --font-size-25: 25px;
   --font-size-35: 35px;
+  --font-size-button: 1.5rem;
   --font-size-title: 2rem;
   --font-weight-thin: 300;
   --font-weight-bold: 600;
@@ -21,7 +21,15 @@
   --grey-dark: #5b5b5b;
   --yellow-dark: #fdcb46;
   --yellow-mid: #f8c867;
+  --yellow-darker: #c59f34;
   --yellow-light: #fff8e9;
+}
+@media (max-width: 320px) {
+  :root {
+    --font-size-button: 1.3rem;
+    --font-size-close: 1.5rem;
+    --font-size-title: 1.5rem;
+  }
 }
 
 /*Main Tags */
@@ -34,12 +42,12 @@ body {
   width: 100%;
 }
 a {
-  color: var(--yellow-dark);
+  color: var(--yellow-darker);
   text-decoration: underline;
 }
 
 /*Main sections*/
-.container, 
+.container,
 .form {
   border-radius: var(--spacer-10);
 }
@@ -47,7 +55,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  padding: 2% 8% !important;
+  padding: 5% 8% !important;
 }
 .form > .row {
   margin-bottom: 0 !important;
@@ -62,7 +70,7 @@ a {
 /* Banner with title*/
 .banner-title {
   border-radius: var(--spacer-10);
-  padding: 2rem 3rem;
+  padding: 2rem 2rem;
   width: 100%;
 }
 .banner-title .title {
@@ -74,7 +82,7 @@ a {
 .banner-title i {
   float: right;
   font-weight: var(--font-weight-thin);
-  font-size: var(--font-size-35);
+  font-size: var(--font-size-title);
 }
 
 /*Inputs fields*/
@@ -82,25 +90,35 @@ a {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
 }
-.input-field label, 
+.input-field label,
 .input-field label.active,
-.input-field input[type=text]:focus + label.active, 
-.input-field input[type=number]:focus + label.active,
-.input-field input[type=email]:focus + label.active,
-.input-field input[type=tel]:focus + label.active{
+.input-field input[type="text"]:focus + label.active,
+.input-field input[type="number"]:focus + label.active,
+.input-field input[type="email"]:focus + label.active,
+.input-field input[type="tel"]:focus + label.active {
   color: var(--grey-dark);
 }
-.input-field input[type=text], 
-.input-field input[type=number], 
-.input-field input[type=email], 
-.input-field input[type=tel] {
+.input-field input[type="text"],
+.input-field input[type="number"],
+.input-field input[type="email"],
+.input-field input[type="tel"] {
   border-bottom: 1px solid var(--yellow-mid) !important;
   box-shadow: 0 1px 0 0 var(--yellow-light) !important;
+}
+input[type="text"]:not(.browser-default),
+input[type="password"]:not(.browser-default),
+input[type="email"]:not(.browser-default),
+input[type="tel"]:not(.browser-default),
+input[type="number"]:not(.browser-default) {
+  height: 2.75rem;
+}
+.input-field.col label {
+  left: 1.5rem;
 }
 
 /*Checkbox inputs */
 .check-field {
-  margin-top: var(--spacer-30)
+  margin-top: 7%;
 }
 [type="checkbox"]:checked + span:not(.lever):before {
   border-right: 1px solid var(--yellow-dark);
@@ -111,10 +129,13 @@ a {
   background: var(--yellow-light);
   border-radius: 5px;
 }
+[type="checkbox"] + span:not(.lever) {
+  font-size: 0.90rem;
+}
 
 /*Buttons*/
-.btn, 
-.btn:focus, 
+.btn,
+.btn:focus,
 .btn:hover {
   background-color: var(--yellow-dark);
   border-radius: var(--spacer-5);
@@ -123,7 +144,7 @@ a {
   font-weight: var(--font-weight-bold);
   width: 100%;
   margin-top: 10%;
-  font-size: var(--font-size-20);
+  font-size: var(--font-size-button);
 }
 
 /*Image Background*/
