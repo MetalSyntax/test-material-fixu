@@ -1,0 +1,140 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+:root {
+  --spacer-5: 5px;
+  --spacer-10: 10px;
+  --spacer-30: 30px;
+  --font-size-20: 20px;
+  --font-size-25: 25px;
+  --font-size-35: 35px;
+  --font-size-title: 2rem;
+  --font-weight-thin: 300;
+  --font-weight-bold: 600;
+  --font-weight-heavy: 800;
+  --grey-light: #676767;
+  --grey-dark: #5b5b5b;
+  --yellow-dark: #fdcb46;
+  --yellow-mid: #f8c867;
+  --yellow-light: #fff8e9;
+}
+
+/*Main Tags */
+body {
+  background-color: var(--grey-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+a {
+  color: var(--yellow-dark);
+  text-decoration: underline;
+}
+
+/*Main sections*/
+.container, 
+.form {
+  border-radius: var(--spacer-10);
+}
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 2% 8% !important;
+}
+.form > .row {
+  margin-bottom: 0 !important;
+}
+.section-form {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0 !important;
+  border-radius: var(--spacer-10);
+}
+
+/* Banner with title*/
+.banner-title {
+  border-radius: var(--spacer-10);
+  padding: 2rem 3rem;
+  width: 100%;
+}
+.banner-title .title {
+  margin: 0;
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-heavy);
+  text-transform: uppercase;
+}
+.banner-title i {
+  float: right;
+  font-weight: var(--font-weight-thin);
+  font-size: var(--font-size-35);
+}
+
+/*Inputs fields*/
+.input-field {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+.input-field label, 
+.input-field label.active,
+.input-field input[type=text]:focus + label.active, 
+.input-field input[type=number]:focus + label.active,
+.input-field input[type=email]:focus + label.active,
+.input-field input[type=tel]:focus + label.active{
+  color: var(--grey-dark);
+}
+.input-field input[type=text], 
+.input-field input[type=number], 
+.input-field input[type=email], 
+.input-field input[type=tel] {
+  border-bottom: 1px solid var(--yellow-mid) !important;
+  box-shadow: 0 1px 0 0 var(--yellow-light) !important;
+}
+
+/*Checkbox inputs */
+.check-field {
+  margin-top: var(--spacer-30)
+}
+[type="checkbox"]:checked + span:not(.lever):before {
+  border-right: 1px solid var(--yellow-dark);
+  border-bottom: 1px solid var(--yellow-dark);
+}
+[type="checkbox"] + span:not(.lever):before {
+  border: 1px solid var(--yellow-dark);
+  background: var(--yellow-light);
+  border-radius: 5px;
+}
+
+/*Buttons*/
+.btn, 
+.btn:focus, 
+.btn:hover {
+  background-color: var(--yellow-dark);
+  border-radius: var(--spacer-5);
+  box-shadow: 0 0 0 0 !important;
+  text-transform: uppercase;
+  font-weight: var(--font-weight-bold);
+  width: 100%;
+  margin-top: 10%;
+  font-size: var(--font-size-20);
+}
+
+/*Image Background*/
+.image {
+  display: flex;
+}
+.image.col {
+  padding: 0 !important;
+}
+@media (max-width: 992px) {
+  .image {
+    display: none;
+  }
+}
